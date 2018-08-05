@@ -42,4 +42,4 @@
          obs_std = np.sqrt(self.var)
          return (inputs - obs_mean ) / obs_std
          
-# Building the AI    
+  

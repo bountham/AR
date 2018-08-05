@@ -42,4 +42,45 @@
          obs_std = np.sqrt(self.var)
          return (inputs - obs_mean ) / obs_std
          
-  
+ # Building  the AI
+ 
+ class Policy():
+     
+     def __init__(self, input_size, output_size):
+         self.theta = np.zeros((output.size, input_size))
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

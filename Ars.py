@@ -64,10 +64,26 @@ class Policy():
         step = np.zeros()(self.theta.shape)
         for r_pos, r_neg, d in rollouts:
             step += (r_pos - r_neg) * d
-            self.theta += hp.learning_rate / (hp.nb_best_direction * sigma_r) * step
+            self.theta += hp.learning_rate / (hp.nb_best_directions * sigma_r) * step
  
  
- 
+# exploring the policy on one specific direction and over one expisode
+            
+def explore(env, normalizer, policy, direction = None, delta = None):
+   state = env.reset()
+   done = False
+   num_plays = 0.
+   sum_rewards = 0
+   while not done and num_players < hp.episode_lenght:
+       normalizer.observe(state)
+       state = normalizer.normalize(state)
+       action = policy.evaluate(state, delta, direction)
+       state,reward, done, _= env.step(action)
+       reward = max(mix(reward,1),-1)
+       sum_reward += reward
+       
+   
+    
  
  
  
